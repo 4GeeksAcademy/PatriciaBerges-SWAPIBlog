@@ -5,12 +5,12 @@ export const Home = () => {
 
 	const mapData = (data) => {
 		return data.map((item) => {
-			return (
-				<div key={item.uid}>
-					<p>{item.name}</p>
-				</div>
-			)
-		})
+						return (
+							<div class="col-4 bg-white text-black singleCard" key={item.uid}>
+								<h5>{item.name}</h5>
+							</div>
+						)
+					})
 	}
 
 	const [people, setPeople] = useState([])
@@ -36,7 +36,12 @@ export const Home = () => {
 	}, [])
 
 	return (
-		<div className="container d-flex">
+		<div className="container">
+			<div class="container">
+				<div class="row flex-nowrap overflow-auto">
+					{mapData(people)}
+				</div>
+			</div>
 			<div className="m-3">{mapData(people)}</div>
 			<div className="m-3">{mapData(planets)}</div>
 			<div className="m-3">{mapData(vehicles)}</div>

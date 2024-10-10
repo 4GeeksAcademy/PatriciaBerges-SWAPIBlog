@@ -2,3 +2,13 @@ body{
     background-color: black;
     color: white
 }
+
+.singleCard{
+    height: 200px;
+    width: 300px;
+    margin: 5px;
+    border: 1px solid black;
+    text-align: center;
+    align-self: flex-end
+}
+
