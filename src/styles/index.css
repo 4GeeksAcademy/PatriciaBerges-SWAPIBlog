@@ -1,14 +1,67 @@
+@font-face{
+    font-family: 'StarWars';
+    src: url('../fonts/StarWarsItalic.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.logo{
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
 body{
     background-color: black;
-    color: white
+    color: gold;
+    font-family: 'StarWars';
+    font-weight: 100;
 }
 
 .singleCard{
-    height: 200px;
+    height: 300px;
     width: 300px;
     margin: 5px;
     border: 1px solid black;
     text-align: center;
     align-self: flex-end
 }
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.learnBtn{
+    width: 50%;
+}
+.card-img-top{
+    height: 200px !important;
+    object-fit: cover;
+}
+
+.slider{
+    height: 400px;
+    margin: 0 !important;
+}
+
+.overflow-auto{
+    overflow-x: auto;
+    overflow-y: hidden !important;
+}
+
+.favBtn{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: gold;
+    font-size: large;
+}
+
+h2{
+    color: gold
+}
+
+
 

@@ -3,14 +3,25 @@ import "../../styles/home.css";
 
 export const Home = () => {
 
-	const mapData = (data) => {
+	const mapData = (data, group) => {
 		return data.map((item) => {
-						return (
-							<div class="col-4 bg-white text-black singleCard" key={item.uid}>
-								<h5>{item.name}</h5>
-							</div>
-						)
-					})
+			let url = `https://starwars-visualguide.com/assets/img/${group}/${item.uid}.jpg`
+			let path = `${group}/${item.uid}`
+			return (
+				<div className="col-4 bg-black singleCard mb-5" key={item.uid}>
+					<div className="card bg-black">
+						<img src={url} className="card-img-top bg-black" alt={item.name} />
+						<div className="card-body bg-black"></div>
+						<h5 className="card-title text-warning">{item.name}</h5>
+						<div className="d-flex justify-content-between">
+							<a href={path} className="btn btn-warning learnBtn m-2">Learn more!</a>
+							<button className="favBtn btn btn-warning m-2">♡</button>
+						</div>
+						
+					</div>
+				</div>
+				)
+			})
 	}
 
 	const [people, setPeople] = useState([])
@@ -37,14 +48,24 @@ export const Home = () => {
 
 	return (
 		<div className="container">
-			<div class="container">
-				<div class="row flex-nowrap overflow-auto">
-					{mapData(people)}
+			<h2>CHARACTERS</h2>
+			<div className="container m-3 mb-5">
+				<div className="row flex-nowrap overflow-auto p-2 slider">
+					{mapData(people, "characters")}
 				</div>
 			</div>
-			<div className="m-3">{mapData(people)}</div>
-			<div className="m-3">{mapData(planets)}</div>
-			<div className="m-3">{mapData(vehicles)}</div>
+			<h2>PLANETS</h2>
+			<div className="container m-3 mb-5">
+				<div className="row flex-nowrap overflow-auto p-2 slider">
+					{mapData(planets, "planets")}
+				</div>
+			</div>
+			<h2>VEHICLES</h2>
+			<div className="container m-3 mb-5">
+				<div className="row flex-nowrap overflow-auto p-2 slider">
+					{mapData(vehicles, "vehicles")}
+				</div>
+			</div>
 		</div>
 	)
 }
