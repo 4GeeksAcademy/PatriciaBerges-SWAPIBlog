@@ -23,7 +23,6 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/demo" element={<Demo />} />
 						<Route path="/characters/:theid" element={<Single group="people" />} />
 						<Route path="/planets/:theid" element={<Single group="planets"/>} />
 						<Route path="/vehicles/:theid" element={<Single group="vehicles" />} />

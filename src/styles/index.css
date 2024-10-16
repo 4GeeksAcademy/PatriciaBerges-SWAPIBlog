@@ -63,5 +63,29 @@ h2{
     color: gold
 }
 
+.sheetPic{
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+}
 
+.basicInfo{
+    border: solid 1px gold;
+    width: 1000px;
+    margin: auto;
+}
 
+h1{
+    text-align: center;
+    margin-left: auto !important;
+}
+
+p{
+    text-align: center;
+    width: 500px;
+    margin: auto !important;
+}
+
+.info{
+    width: 100%;
+}

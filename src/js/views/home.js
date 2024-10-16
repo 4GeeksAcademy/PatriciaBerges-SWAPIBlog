@@ -1,12 +1,17 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import "../../styles/home.css";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Home = () => {
+
+	const { store, actions } = useContext(Context)
 
 	const mapData = (data, group) => {
 		return data.map((item) => {
 			let url = `https://starwars-visualguide.com/assets/img/${group}/${item.uid}.jpg`
-			let path = `${group}/${item.uid}`
+			let path = `/${group}/${item.uid}`
+			let favData = [item.name, path]
 			return (
 				<div className="col-4 bg-black singleCard mb-5" key={item.uid}>
 					<div className="card bg-black">
@@ -14,8 +19,8 @@ export const Home = () => {
 						<div className="card-body bg-black"></div>
 						<h5 className="card-title text-warning">{item.name}</h5>
 						<div className="d-flex justify-content-between">
-							<a href={path} className="btn btn-warning learnBtn m-2">Learn more!</a>
-							<button className="favBtn btn btn-warning m-2">♡</button>
+							<Link to={path} className="btn btn-warning learnBtn m-2">Learn more!</Link>
+							<button onClick={() => actions.handleFav(favData)} className="favBtn btn btn-warning m-2">♡</button>
 						</div>
 						
 					</div>
