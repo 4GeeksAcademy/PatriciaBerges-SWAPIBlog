@@ -12,6 +12,7 @@ export const Home = () => {
 			let url = `https://starwars-visualguide.com/assets/img/${group}/${item.uid}.jpg`
 			let path = `/${group}/${item.uid}`
 			let favData = [item.name, path]
+			const isFav = store.favs.some(fav => fav[0] == item.name)
 			return (
 				<div className="col-4 bg-black singleCard mb-5" key={item.uid}>
 					<div className="card bg-black">
@@ -20,7 +21,7 @@ export const Home = () => {
 						<h5 className="card-title text-warning">{item.name}</h5>
 						<div className="d-flex justify-content-between">
 							<Link to={path} className="btn btn-warning learnBtn m-2">Learn more!</Link>
-							<button onClick={() => actions.handleFav(favData)} className="favBtn btn btn-warning m-2">♡</button>
+							<button onClick={() => actions.handleFav(favData)} className="favBtn btn btn-warning m-2">{isFav ? '♥' : '♡'}</button>
 						</div>
 						
 					</div>
